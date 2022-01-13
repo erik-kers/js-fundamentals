@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>JS-Counter</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="counter">
+      <h1 id="counter__count">0</h1>
+      <div class="counter__buttons">
+        <button class="btn" id="counter__buttons__substract">-</button>
+        <button class="btn" id="counter__buttons__add">+</button>
+      </div>
+      <div class="counter__input">
+        <h5>Summa per klick:</h5>
+        <input id="counter__input__amount-per-click" type="number" value="1" />
+      </div>
+      <div class="counter__buttons">
+        <button class="btn" id="counter__buttons__toggle-fizz-buzz">
+          Visa FizzBuzz
+        </button>
+        <button class="btn" id="counter__buttons__reset">Återställ</button>
+      </div>
+      <div id="counter__fizz-buzz-container"></div>
+    </div>
+  </body>
+</html>
