@@ -51,11 +51,18 @@ addButton.addEventListener("click", () => updateCounter("add"));
 //Återställ allt till intiala värden
 resetButton.addEventListener("click", () => setInitialValues(initialValues));
 
+// Uppdatera summa per klick med angivet värde
+amountPerClickInput.addEventListener(
+  "input",
+  (event) => (amountPerClick = +event.target.value)
+);
+
 // Funktion som sätter upp alla nödvändiga värden
 const setInitialValues = (values) => {
   count = values.count;
-  countDisplay.innerHTML = count;
+  countDisplay.innerHTML = values.count;
   amountPerClick = values.amountPerClick;
+  amountPerClickInput.value = values.amountPerClick;
 };
 
 // Initiera räknaren
