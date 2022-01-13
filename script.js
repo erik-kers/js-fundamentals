@@ -13,9 +13,50 @@ const fizzBuzzContainer = document.getElementById(
   "counter__fizz-buzz-container"
 );
 
-// Ändra innehållet i count display!
-countDisplay.innerHTML = 'Här ska det vara siffror!'
+// Initiala värden för att kunna återställa allt
+const initialValues = {
+  count: 0,
+  amountPerClick: 1,
+}
 
+// Behållare som ändras
+let count;
+let amountPerClick;
 
-// Testa skapa en event-lyssnare för en knapp!
-addButton.addEventListener('click', () => console.log('click'));
+// Substraherar eller adderar per klick
+const updateCounter = (type) => {
+  switch (type) {
+    case "substract":
+      count = count - amountPerClick;
+      countDisplay.innerHTML = count;
+      break;
+
+    case "add":
+      count = count + amountPerClick;
+      countDisplay.innerHTML = count;
+      break;
+
+    default:
+      break;
+  }
+};
+
+// Skapa event-lyssnare som reagerar på knapptryck!
+// Uppdatera räknaren med -
+substractButton.addEventListener("click", () => updateCounter("substract"));
+
+// Uppdatera räknaren med +
+addButton.addEventListener("click", () => updateCounter("add"));
+
+//Återställ allt till intiala värden
+resetButton.addEventListener("click", () => setInitialValues(initialValues));
+
+// Funktion som sätter upp alla nödvändiga värden
+const setInitialValues = (values) => {
+  count = values.count;
+  countDisplay.innerHTML = count;
+  amountPerClick = values.amountPerClick;
+};
+
+// Initiera räknaren
+setInitialValues(initialValues);
